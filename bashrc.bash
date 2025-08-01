@@ -1,4 +1,5 @@
 source ~/repo/dotfiles/utils/prompt_git_commit.sh
+source ~/repo/dotfiles/utils/prompt_ts_type.sh
 source ~/repo/dotfiles/utils/copy_green_ps1.sh
 source ~/repo/dotfiles/utils/yazi.sh
 
