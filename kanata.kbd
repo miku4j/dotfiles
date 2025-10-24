@@ -16,9 +16,9 @@
                       @nav
 )
 (deflayer navigation
-  caps f1   f2   f3   f4   f5   f6   f7   f8   f9   f10
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10
                                      @ml  @gl  @gr  @mr
-  esc  _    _    _    _    lft  down up   rght _
+  caps _    _    _    _    lft  down up   rght _
             @cls           home pgdn pgup end
                       _
 )
@@ -27,7 +27,7 @@
                                      _    _    _    _
   esc  _    _    _    _    _    _    _    _    _
             _              _    _    _    _
-                      _
+                      @nav
 )
 (defvar
   four 210
@@ -46,7 +46,7 @@
   ; (tap-hold $four $four ; rmet)
 
   nav (tap-hold $one $one spc (layer-while-held navigation))
-  cgm (tap-dance $two (` (layer-switch gaming)))
+  cgm (tap-dance $two (caps (layer-switch gaming)))
   bas (tap-dance $two (caps (layer-switch base)))
 
   cls A-f4
