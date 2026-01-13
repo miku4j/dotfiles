@@ -6,28 +6,28 @@
                                      u    i    o    p
   caps a    s    d    f    h    j    k    l    ;
             x              n    m    ,    .
-                      spc
+            alt       spc
 )
 (deflayer base
-  @cgm _    _    _    _    _    _    _    _    _    _
+  caps _    _    _    _    _    _    _    _    _    _
                                      _    _    _    _
   esc  @a   @s   @d   @f   _    @j   @k   @l   @;
             _              _    _    _    _
-                      @nav
+            @cgm      @nav
 )
 (deflayer navigation
-  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10
+  esc f1   f2   f3   f4   f5   f6   f7   f8   f9   f10
                                      @ml  @gl  @gr  @mr
-  caps _    _    _    _    lft  down up   rght _
+  caps  _    _    _    _    lft  down up   rght _
             @cls           home pgdn pgup end
-                      _
+            _         _
 )
 (deflayer gaming
-  @bas _    _    _    _    _    _    _    _    _    _
+  caps _    _    _    _    _    _    _    _    _    _
                                      _    _    _    _
   esc  _    _    _    _    _    _    _    _    _
             _              _    _    _    _
-                      @nav
+            @bas      @nav
 )
 (defvar
   four 210
