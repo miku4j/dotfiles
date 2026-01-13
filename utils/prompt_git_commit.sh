@@ -11,8 +11,7 @@ prompt_git_commit() {
       cat <<EOF
 create semantic commit message with the following criteria:
 - just give me the commit message
-- add context like 'feat(dashboard)' or 'refactor(auth-register)' to the title
-- use nested list
+- use nested list if needed for the body
 - use '-' instead of '*' for the list
 - use 2 spaces for the nested list
 - body's lines must not be longer than 100 characters
