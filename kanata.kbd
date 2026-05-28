@@ -46,8 +46,8 @@
   ; (tap-hold $four $four ; rmet)
 
   nav (tap-hold $one $one spc (layer-while-held navigation))
-  cgm (tap-dance $two (caps (layer-switch gaming)))
-  bas (tap-dance $two (caps (layer-switch base)))
+  cgm (tap-dance $two (alt (layer-switch gaming)))
+  bas (tap-dance $two (alt (layer-switch base)))
 
   cls A-f4
   ml C-S-M-left
