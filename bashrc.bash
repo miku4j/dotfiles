@@ -16,7 +16,6 @@ alias drp="docker run -v .:/app -w /app -it --network host" # [D]ocker [R]un [P]
 
 export VISUAL=nvim
 export EDITOR="$VISUAL"
-export PAGER=bat
 
 PATH=$PATH:/usr/local/bin
 PATH=$PATH:~/.local/bin
