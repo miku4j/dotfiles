@@ -27,7 +27,7 @@
                                      _    _    _    _
   esc  _    _    _    _    _    _    _    _    _
             _              _    _    _    _
-            @bas      @nav
+            @bas      spc
 )
 (defvar
   four 210
