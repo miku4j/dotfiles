@@ -9,7 +9,7 @@
             alt       spc
 )
 (deflayer base
-  caps _    _    _    _    _    _    _    _    _    _
+  grv  _    _    _    _    _    _    _    _    _    _
                                      _    _    _    _
   esc  @a   @s   @d   @f   _    @j   @k   @l   @;
             _              _    _    _    _
