@@ -30,6 +30,24 @@ export PYENV_ROOT="$HOME/.pyenv"
 
 if [ -f "$(command -v fzf)" ]; then
   eval "$(fzf --bash)"
+
+  # Ctrl+G - rg live-grep via fzf, copies file path to clipboard via xsel
+  fzf-live-grep() {
+    local file
+    file=$(rg --line-number --column --no-heading --smart-case . 2>/dev/null |
+      fzf --ansi \
+          --delimiter=: \
+          --preview='printf "\033[1;36m%s\033[0m\n\n" "{1}" && bat --style=numbers --color=always --highlight-line={2} {1}' \
+          --preview-window='right:60%:wrap,+{2},~2' \
+          --bind='enter:become(echo {1}:{2})' \
+          --bind='alt-enter:become(echo $(realpath {1}):{2})' \
+          --bind='alt-c:execute(code --goto {1}:{2})+abort')
+    if [[ -n "$file" ]]; then
+      printf '%s' "$file" | xsel -ib
+    fi
+  }
+
+  bind -x '"\C-g": fzf-live-grep'
 fi
 
 if [ -f "$(command -v zoxide)" ]; then
