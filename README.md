@@ -26,6 +26,8 @@ git config --global user.email "ahmaddwi700@gmail.com"
 git clone https://github.com/ahmaddynugroho/dotfiles ~/repo/dotfiles
 git clone https://github.com/ahmaddynugroho/nvim ~/.config/nvim
 ln -s $(pwd)/repo/dotfiles/.tmux.conf $(pwd)/.tmux.conf
+ln -s ~/repo/dotfiles/yazi ~/.config/yazi
+ln -s ~/repo/dotfiles/opencode ~/.config/opencode
 echo "source ~/repo/dotfiles/bashrc.bash" >> ~/.bashrc
 
 gh auth login

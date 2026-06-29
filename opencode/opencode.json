@@ -1,0 +1,22 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "instructions": [
+    "AGENTS.md"
+  ],
+  "agent": {
+    "plan": {
+      "model": "opencode-go/deepseek-v4-flash",
+      "variant": "max"
+    },
+    "build": {
+      "model": "opencode-go/deepseek-v4-flash",
+      "variant": "max"
+    }
+  },
+  "permission": {
+    "bash": {
+      "git commit*": "ask",
+      "git push*": "ask"
+    }
+  }
+}
