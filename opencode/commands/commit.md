@@ -12,10 +12,11 @@ Steps:
    - Subject line: `<type>: <imperative summary>` under 72 chars
      - Types: `feat`, `fix`, `chore`, `refactor`, `test`, `docs`, `style`, `perf`, `ci`, `build`, `revert`
    - Blank line
-   - Body explaining WHAT changed and WHY (wrapped at 72 chars)
-     - Reference root cause if fixing a bug
-     - List key changes as bullet points if helpful
-     - Mention file paths when relevant
+    - Body: use `-` bullet points, 4-space indentation for nested details
+        - Root cause if fixing a bug
+        - Key changes made
+            - Deeper detail if it adds clarity
+        - File paths when relevant
 5. Commit: `git commit -m "<subject>" -m "<body>"`
 6. Show the result with `git log --format="%h %s%n%b" -1`
 
