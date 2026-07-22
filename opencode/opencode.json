@@ -6,17 +6,17 @@
   ],
   "agent": {
     "general": {
-      "model": "opencode-go/deepseek-v4-flash",
+      "model": "openrouter/deepseek/deepseek-v4-flash",
       "variant": "max",
       "mode": "primary",
       "prompt": "You are a friendly general-purpose assistant. Chat naturally and helpfully."
     },
     "plan": {
-      "model": "opencode-go/deepseek-v4-flash",
+      "model": "openrouter/deepseek/deepseek-v4-flash",
       "variant": "max"
     },
     "build": {
-      "model": "opencode-go/deepseek-v4-flash",
+      "model": "openrouter/deepseek/deepseek-v4-flash",
       "variant": "max"
     }
   },
