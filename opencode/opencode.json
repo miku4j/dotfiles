@@ -1,24 +1,15 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "default_agent": "general",
+  "model": "openrouter/xiaomi/mimo-v2.5",
   "instructions": [
     "AGENTS.md"
   ],
   "agent": {
     "general": {
-      "model": "openrouter/deepseek/deepseek-v4-flash",
-      "variant": "max",
       "mode": "primary",
       "prompt": "You are a friendly general-purpose assistant. Chat naturally and helpfully."
     },
-    "plan": {
-      "model": "openrouter/deepseek/deepseek-v4-flash",
-      "variant": "max"
-    },
-    "build": {
-      "model": "openrouter/deepseek/deepseek-v4-flash",
-      "variant": "max"
-    }
   },
   "permission": {
     "bash": {
