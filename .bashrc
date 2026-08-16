@@ -7,6 +7,7 @@ alias n="nvim"
 
 export VISUAL=nvim
 export EDITOR="$VISUAL"
+export PAGER=bat
 
 PATH=$PATH:~/.local/bin
 

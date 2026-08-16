@@ -17,7 +17,10 @@ wsl --manage archlinux --set-default-user miku4j
 sudo pacman -S rate-mirrors
 rate-mirrors --protocol=https arch | sudo tee /etc/pacman.d/mirrorlist
 
-sudo pacman -S fuse3 less git base-devel dua-cli xsel zip unzip ripgrep github-cli fzf zoxide lazygit yazi tmux
+sudo pacman -S fuse3 git base-devel xsel zip unzip ripgrep github-cli fzf zoxide lazygit yazi tmux bat dos2unix
+
+curl https://mise.run | sh
+
 git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si
 cd ~ && rm -rf yay-bin
 
