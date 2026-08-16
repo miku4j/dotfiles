@@ -1,8 +1,8 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "default_agent": "general",
-  "model": "openrouter/deepseek/deepseek-v4-flash-0731",
-  "small_model": "openrouter/deepseek/deepseek-v4-flash",
+  "model": "opencode-go/deepseek-v4-flash",
+  "small_model": "opencode-go/deepseek-v4-flash",
   "instructions": [
     "AGENTS.md"
   ],
@@ -11,20 +11,18 @@
       "mode": "primary",
       "prompt": "You are a friendly general-purpose assistant. Chat naturally and helpfully."
     },
-    "plan": {
-      "model": "openrouter/deepseek/deepseek-v4-flash-0731"
-    },
-    "build": {
-      "model": "openrouter/deepseek/deepseek-v4-flash"
-    },
-    "explore": {
-      "model": "openrouter/deepseek/deepseek-v4-flash"
-    }
   },
   "permission": {
     "bash": {
       "git commit*": "ask",
       "git push*": "ask"
+    }
+  },
+  "mcp": {
+    "chrome-devtools": {
+      "type": "local",
+      "command": ["npx", "-y", "chrome-devtools-mcp@latest", "--headless", "--executablePath=/usr/sbin/chromium"],
+      "enabled": true
     }
   }
 }
