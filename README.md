@@ -28,13 +28,19 @@ git config --global user.name "miku4j"
 git config --global user.email "ahmaddwi700@gmail.com"
 
 git clone https://github.com/miku4j/dotfiles ~/repo/dotfiles
-git clone https://github.com/miku4j/nvim ~/.config/nvim
 
 ln -s $(pwd)/repo/dotfiles/.tmux.conf $(pwd)/.tmux.conf
 ln -s ~/repo/dotfiles/yazi ~/.config/yazi
 ln -s ~/repo/dotfiles/opencode ~/.config/opencode
-
 echo "source ~/repo/dotfiles/.bashrc" >> ~/.bashrc
+
+# for nvim
+git clone https://github.com/miku4j/nvim ~/.config/nvim
+mise use -g tree-sitter node go
+
+# docker
+sudo pacman -S docker docker-compose lazydocker
+sudo usermod -aG docker miku4j
 
 gh auth login
 ```
