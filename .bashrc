@@ -17,7 +17,6 @@ HISTFILESIZE=20000
 
 eval "$(zoxide init bash)"
 eval "$(fzf --bash)"
-eval "$(mise activate bash)"
 
 PS1="$PS1\n> "
 

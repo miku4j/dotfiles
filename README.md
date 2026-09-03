@@ -1,5 +1,6 @@
-### Arch WSL
+### Arch WSL (Official)
 ```bash
+
 # sh
 passwd
 pacman -Syu sudo neovim
@@ -19,7 +20,7 @@ rate-mirrors --protocol=https arch | sudo tee /etc/pacman.d/mirrorlist
 
 sudo pacman -S fuse3 git base-devel xsel zip unzip ripgrep github-cli fzf zoxide lazygit yazi tmux bat dos2unix
 
-curl https://mise.run | sh
+curl -fsSL https://install.determinate.systems/nix | sh -s -- install
 
 git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si
 cd ~ && rm -rf yay-bin
@@ -29,18 +30,21 @@ git config --global user.email "ahmaddwi700@gmail.com"
 
 git clone https://github.com/miku4j/dotfiles ~/repo/dotfiles
 
+mkdir .config
 ln -s $(pwd)/repo/dotfiles/.tmux.conf $(pwd)/.tmux.conf
 ln -s ~/repo/dotfiles/yazi ~/.config/yazi
 ln -s ~/repo/dotfiles/opencode ~/.config/opencode
 echo "source ~/repo/dotfiles/.bashrc" >> ~/.bashrc
 
 # for nvim
+sudo pacman -S tree-sitter-cli
 git clone https://github.com/miku4j/nvim ~/.config/nvim
-mise use -g tree-sitter node go
+nvim # to install the nvim deps
 
 # docker
 sudo pacman -S docker docker-compose lazydocker
 sudo usermod -aG docker miku4j
+sudo systemctl enable --now docker
 
 gh auth login
 ```
