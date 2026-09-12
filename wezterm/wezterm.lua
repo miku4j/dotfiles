@@ -8,8 +8,21 @@ config.enable_tab_bar = false
 -- Default to home (portable, no hardcoded username)
 config.default_cwd = os.getenv("HOME")
 
--- Theme
-config.color_scheme = "Kasugano (terminal.sexy)"
+-- Theme: Kanso Zen (upstream: https://github.com/webhooked/kanso.nvim/blob/main/extras/wezterm/kanso-zen.lua)
+config.force_reverse_video_cursor = true
+config.colors = {
+  foreground = "#C5C9C7",
+  background = "#090E13",
+  cursor_bg = "#C5C9C7",
+  cursor_fg = "#090E13",
+  cursor_border = "#C5C9C7",
+  selection_fg = "#C5C9C7",
+  selection_bg = "#22262D",
+  scrollbar_thumb = "#22262D",
+  split = "#22262D",
+  ansi = { "#090E13", "#C4746E", "#8A9A7B", "#C4B28A", "#8BA4B0", "#A292A3", "#8EA4A2", "#A4A7A4" },
+  brights = { "#A4A7A4", "#E46876", "#87A987", "#E6C384", "#7FB4CA", "#938AA9", "#7AA89F", "#C5C9C7" },
+}
 
 -- Wallpaper (full-bright image + dark overlay for readability)
 config.background = {
@@ -21,7 +34,7 @@ config.background = {
     vertical_align = "Middle",
   },
   {
-    source = { Color = "#1b1b1b" },
+    source = { Color = "#090E13" },
     width = "100%",
     height = "100%",
     opacity = 0.95,
