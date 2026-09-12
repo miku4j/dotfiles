@@ -1,6 +1,13 @@
 - Follow DRY principle
 - BE EFFICIENT in getting context from a codebase
 
+## System
+
+- OS: CachyOS (Arch-based), KDE Plasma desktop, bare metal
+- Package manager: `pacman` (use `sudo pacman -S <package>` for system-wide installs)
+- AUR helper: `yay` (use `yay -S <package>` for AUR packages)
+- Shell: bash
+
 ## Git Conventions
 
 - Use semantic commit messages: `feat:`, `fix:`, `chore:`, `refactor:`, `test:`, `docs:`, `style:`, `perf:`, `ci:`, `build:`, `revert:`

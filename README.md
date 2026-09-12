@@ -34,6 +34,7 @@ mkdir .config
 ln -s $(pwd)/repo/dotfiles/.tmux.conf $(pwd)/.tmux.conf
 ln -s ~/repo/dotfiles/yazi ~/.config/yazi
 ln -s ~/repo/dotfiles/opencode ~/.config/opencode
+mkdir -p ~/.config/wezterm && ln -s ~/repo/dotfiles/wezterm/wezterm.lua ~/.config/wezterm/wezterm.lua
 echo "source ~/repo/dotfiles/.bashrc" >> ~/.bashrc
 
 # for nvim
@@ -48,3 +49,16 @@ sudo systemctl enable --now docker
 
 gh auth login
 ```
+
+### CachyOS (desktop, bash)
+Fresh installs are automated by `utils/setup-cachyos.sh` (idempotent, run as root). It installs Determinate Nix, system packages, `yay`, Google Chrome, dotfiles/nvim, bash config and kanata.
+
+```bash
+# from the web (before the repo exists)
+curl -fsSL https://raw.githubusercontent.com/miku4j/dotfiles/main/utils/setup-cachyos.sh | sudo bash -s -- --update
+
+# or from an existing clone
+sudo ./utils/setup-cachyos.sh [--update] [--skip-kanata] [--user <name>]
+```
+
+Manual leftovers afterwards: `gh auth login`, `opencode auth login`.

@@ -1,0 +1,9 @@
+[Unit]
+Description=Kanata keyboard remapper
+
+[Service]
+ExecStart=/usr/bin/sh -c '/home/miku4j/.local/bin/kanata -c /home/miku4j/repo/dotfiles/kanata.kbd'
+Restart=no
+
+[Install]
+WantedBy=sysinit.target
