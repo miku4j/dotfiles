@@ -8,6 +8,15 @@ config.enable_tab_bar = false
 -- Default to home (portable, no hardcoded username)
 config.default_cwd = os.getenv("HOME")
 
+-- Font: JetBrainsMono Nerd Font, fallback to installed JetBrains Mono
+config.font = wezterm.font_with_fallback({
+  "JetBrainsMono Nerd Font",
+  "JetBrains Mono",
+  "monospace",
+})
+config.font_size = 11.0
+config.warn_about_missing_glyphs = false
+
 -- Theme: Kanso Zen (upstream: https://github.com/webhooked/kanso.nvim/blob/main/extras/wezterm/kanso-zen.lua)
 config.force_reverse_video_cursor = true
 config.colors = {
