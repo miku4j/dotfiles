@@ -1,12 +1,13 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "plugin": ["@dietrichgebert/ponytail"] ,
   "default_agent": "general",
   "small_model": "opencode-go/mimo-v2.5",
   "instructions": ["AGENTS.md"],
-  "agent": {
-    "general": {
-      "mode": "primary",
-      "prompt": "You are a friendly general-purpose assistant. Chat naturally and helpfully."
+  "command": {
+    "f": {
+      "template": "Load Ponytail and Caveman skills",
+      "description": "Load Ponytail and Caveman skills"
     }
   },
   "permission": {
