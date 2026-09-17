@@ -19,7 +19,7 @@ DOTFILES_URL="${DOTFILES_URL:-https://github.com/miku4j/dotfiles}"
 NVIM_URL="${NVIM_URL:-https://github.com/miku4j/nvim}"
 GIT_NAME="${GIT_NAME:-miku4j}"
 GIT_EMAIL="${GIT_EMAIL:-ahmaddwi700@gmail.com}"
-PACKAGES=(neovim tree-sitter-cli xsel wl-clipboard zip unzip dos2unix ripgrep github-cli fzf zoxide lazygit yazi tmux bat fuse3 base-devel git rate-mirrors wezterm ttf-jetbrains-mono-nerd docker docker-compose lazydocker chromium nodejs npm)
+PACKAGES=(neovim tree-sitter-cli xsel wl-clipboard zip unzip dos2unix ripgrep github-cli fzf zoxide lazygit yazi tmux bat fuse3 base-devel git rate-mirrors wezterm ttf-jetbrains-mono-nerd docker docker-buildx docker-compose lazydocker chromium nodejs npm)
 
 # === Flags ===
 UPDATE=0
@@ -133,6 +133,22 @@ install_packages() {
   log "Installing system packages..."
   run pacman -S --needed --noconfirm "${PACKAGES[@]}"
   ok "system packages installed"
+}
+
+setup_docker() {
+  log "Setting up docker..."
+  run systemctl enable docker.service >/dev/null 2>&1 || true
+  if systemctl is-active docker.service >/dev/null 2>&1; then
+    ok "docker running"
+  else
+    run systemctl start docker.service 2>/dev/null || warn "docker failed to start; check: journalctl -u docker"
+  fi
+  if id -nG "$TARGET_USER" 2>/dev/null | grep -qw docker; then
+    ok "$TARGET_USER already in docker group"
+  else
+    run usermod -aG docker "$TARGET_USER"
+    warn "added $TARGET_USER to docker group; re-login to apply"
+  fi
 }
 
 setup_git() {
@@ -257,6 +273,7 @@ summary() {
   echo
   log "Verification:"
   as_user 'for c in nvim lazygit yazi tmux bat fzf zoxide gh rg yay nix wezterm wl-copy docker; do command -v "$c" >/dev/null 2>&1 && echo "  ok: $c"; done' || true
+  echo "  docker: $(systemctl is-active docker.service 2>/dev/null || echo missing) / buildx: $(docker buildx version 2>/dev/null || echo missing)"
   echo "  symlinks:"
   ls -la "$TARGET_HOME/.tmux.conf" "$TARGET_HOME/.config/yazi" "$TARGET_HOME/.config/opencode" "$TARGET_HOME/.config/wezterm/wezterm.lua" 2>/dev/null || true
   echo "  shell: $(getent passwd "$TARGET_USER" | cut -d: -f7)"
@@ -271,6 +288,7 @@ main() {
   install_nix
   [[ "$UPDATE" -eq 1 ]] && update_system
   install_packages
+  setup_docker
   setup_git
   clone_dotfiles
   clone_nvim
