@@ -1,5 +1,7 @@
 - Follow DRY principle
 - BE EFFICIENT in getting context from a codebase
+- I prefer you present any summary using table if possible
+  - For example on presenting plan, explore result, or discovery
 
 ## System
 
