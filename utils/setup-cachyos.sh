@@ -211,7 +211,7 @@ install_aur_pkg() {
 setup_symlinks() {
   log "Setting up symlinks..."
   as_user_run "ln -sfn \"$REPO_DIR/.tmux.conf\" \"$TARGET_HOME/.tmux.conf\""
-  for link in yazi opencode; do
+  for link in yazi opencode lazygit; do
     local target="$TARGET_HOME/.config/$link"
     if [[ -e "$target" && ! -L "$target" ]]; then
       warn "removing existing directory $target"
@@ -275,7 +275,7 @@ summary() {
   as_user 'for c in nvim lazygit yazi tmux bat fzf zoxide gh rg yay nix wezterm wl-copy docker; do command -v "$c" >/dev/null 2>&1 && echo "  ok: $c"; done' || true
   echo "  docker: $(systemctl is-active docker.service 2>/dev/null || echo missing) / buildx: $(docker buildx version 2>/dev/null || echo missing)"
   echo "  symlinks:"
-  ls -la "$TARGET_HOME/.tmux.conf" "$TARGET_HOME/.config/yazi" "$TARGET_HOME/.config/opencode" "$TARGET_HOME/.config/wezterm/wezterm.lua" 2>/dev/null || true
+  ls -la "$TARGET_HOME/.tmux.conf" "$TARGET_HOME/.config/yazi" "$TARGET_HOME/.config/opencode" "$TARGET_HOME/.config/lazygit" "$TARGET_HOME/.config/wezterm/wezterm.lua" 2>/dev/null || true
   echo "  shell: $(getent passwd "$TARGET_USER" | cut -d: -f7)"
   if [[ "$SKIP_KANATA" -eq 0 ]]; then
     echo "  kanata: $(systemctl is-active kanata 2>/dev/null || echo missing)"
