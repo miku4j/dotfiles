@@ -221,6 +221,17 @@ setup_symlinks() {
   done
   as_user_run 'mkdir -p "$HOME/.config/wezterm"'
   as_user_run "ln -sfn \"$REPO_DIR/wezterm/wezterm.lua\" \"$TARGET_HOME/.config/wezterm/wezterm.lua\""
+  # pi agent config only; auth/sessions/cache stay local and untracked
+  as_user_run 'mkdir -p "$HOME/.pi/agent"'
+  for f in settings.json models.json; do
+    as_user_run "ln -sfn \"$REPO_DIR/pi/$f\" \"$TARGET_HOME/.pi/agent/$f\""
+  done
+  local pi_ext="$TARGET_HOME/.pi/agent/extensions"
+  if [[ -e "$pi_ext" && ! -L "$pi_ext" ]]; then
+    warn "removing existing directory $pi_ext"
+    run rm -rf "$pi_ext"
+  fi
+  as_user_run "ln -sfn \"$REPO_DIR/pi/extensions\" \"$pi_ext\""
   ok "symlinks created"
 }
 
@@ -275,7 +286,7 @@ summary() {
   as_user 'for c in nvim lazygit yazi tmux bat fzf zoxide gh rg yay nix wezterm wl-copy docker; do command -v "$c" >/dev/null 2>&1 && echo "  ok: $c"; done' || true
   echo "  docker: $(systemctl is-active docker.service 2>/dev/null || echo missing) / buildx: $(docker buildx version 2>/dev/null || echo missing)"
   echo "  symlinks:"
-  ls -la "$TARGET_HOME/.tmux.conf" "$TARGET_HOME/.config/yazi" "$TARGET_HOME/.config/opencode" "$TARGET_HOME/.config/lazygit" "$TARGET_HOME/.config/wezterm/wezterm.lua" 2>/dev/null || true
+  ls -la "$TARGET_HOME/.tmux.conf" "$TARGET_HOME/.config/yazi" "$TARGET_HOME/.config/opencode" "$TARGET_HOME/.config/lazygit" "$TARGET_HOME/.config/wezterm/wezterm.lua" "$TARGET_HOME/.pi/agent/settings.json" "$TARGET_HOME/.pi/agent/extensions" 2>/dev/null || true
   echo "  shell: $(getent passwd "$TARGET_USER" | cut -d: -f7)"
   if [[ "$SKIP_KANATA" -eq 0 ]]; then
     echo "  kanata: $(systemctl is-active kanata 2>/dev/null || echo missing)"

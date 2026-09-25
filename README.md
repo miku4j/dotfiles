@@ -35,6 +35,10 @@ ln -s $(pwd)/repo/dotfiles/.tmux.conf $(pwd)/.tmux.conf
 ln -s ~/repo/dotfiles/yazi ~/.config/yazi
 ln -s ~/repo/dotfiles/opencode ~/.config/opencode
 mkdir -p ~/.config/wezterm && ln -s ~/repo/dotfiles/wezterm/wezterm.lua ~/.config/wezterm/wezterm.lua
+mkdir -p ~/.pi/agent
+ln -s ~/repo/dotfiles/pi/settings.json ~/.pi/agent/settings.json
+ln -s ~/repo/dotfiles/pi/models.json ~/.pi/agent/models.json
+ln -s ~/repo/dotfiles/pi/extensions ~/.pi/agent/extensions
 echo "source ~/repo/dotfiles/.bashrc" >> ~/.bashrc
 
 # for nvim

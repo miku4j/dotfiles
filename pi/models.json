@@ -1,0 +1,18 @@
+{
+  "providers": {
+    "openrouter": {
+      "modelOverrides": {
+        "deepseek/deepseek-v4.1-flash": {
+          "compat": {
+            "openRouterRouting": {
+              "sort": "price",
+              "preferred_min_throughput": {
+                "p50": 80
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
