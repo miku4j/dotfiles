@@ -63,6 +63,7 @@ const DANGEROUS_COMMAND = [
 	/\b:\(\)\s*\{\s*:\s*\|\s*:\s*&\s*\}\s*;\s*:/, // fork bomb
 	/\b>\s*\/dev\/(sd|hd|nvme|vd)/i,
 	/\b(curl|wget)\b[^\n|]*\|\s*(sudo\s+)?(ba|z|da)?sh\b/i, // pipe download into shell
+	/\bgit\s+(commit|push)\b/i, // never commit/push without explicit approval
 	/\bgit\s+(push\s+.*(--force|-f)\b|reset\s+--hard|clean\s+-[a-z]*[fd])/i,
 	/\b(shred|wipefs|fdisk|parted|blkdiscard)\b/i,
 	/\b(DROP|TRUNCATE)\s+(TABLE|DATABASE|SCHEMA)\b/i,

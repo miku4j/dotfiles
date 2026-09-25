@@ -38,6 +38,7 @@ mkdir -p ~/.config/wezterm && ln -s ~/repo/dotfiles/wezterm/wezterm.lua ~/.confi
 mkdir -p ~/.pi/agent
 ln -s ~/repo/dotfiles/pi/settings.json ~/.pi/agent/settings.json
 ln -s ~/repo/dotfiles/pi/models.json ~/.pi/agent/models.json
+ln -s ~/repo/dotfiles/pi/AGENTS.md ~/.pi/agent/AGENTS.md
 ln -s ~/repo/dotfiles/pi/extensions ~/.pi/agent/extensions
 echo "source ~/repo/dotfiles/.bashrc" >> ~/.bashrc
 

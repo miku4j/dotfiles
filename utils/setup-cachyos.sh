@@ -223,7 +223,7 @@ setup_symlinks() {
   as_user_run "ln -sfn \"$REPO_DIR/wezterm/wezterm.lua\" \"$TARGET_HOME/.config/wezterm/wezterm.lua\""
   # pi agent config only; auth/sessions/cache stay local and untracked
   as_user_run 'mkdir -p "$HOME/.pi/agent"'
-  for f in settings.json models.json; do
+  for f in settings.json models.json AGENTS.md; do
     as_user_run "ln -sfn \"$REPO_DIR/pi/$f\" \"$TARGET_HOME/.pi/agent/$f\""
   done
   local pi_ext="$TARGET_HOME/.pi/agent/extensions"
