@@ -11,6 +11,7 @@
     "openrouter/deepseek/deepseek-v4.1-flash"
   ],
   "packages": [
-    "npm:pi-mcp-adapter"
+    "npm:pi-mcp-adapter",
+    "npm:pi-web-access"
   ]
 }
