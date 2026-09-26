@@ -1,6 +1,6 @@
 {
   "lastChangelogVersion": "0.87.1",
-  "theme": "dark",
+  "theme": "kanso-zen",
   "defaultProvider": "openrouter",
   "defaultModel": "moonshotai/kimi-k2.6",
   "fullscreenExitOutput": "resume-hint",
