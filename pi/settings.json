@@ -9,5 +9,8 @@
   "hideThinkingBlock": true,
   "enabledModels": [
     "openrouter/deepseek/deepseek-v4.1-flash"
+  ],
+  "packages": [
+    "npm:pi-mcp-adapter"
   ]
 }
