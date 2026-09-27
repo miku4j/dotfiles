@@ -8,12 +8,16 @@
   "tuiMode": "fullscreen",
   "hideThinkingBlock": true,
   "enabledModels": [
-    "openrouter/deepseek/deepseek-v4.1-flash"
+    "openrouter/deepseek/deepseek-v4.1-flash",
+    "openai-codex/gpt-6-luna"
   ],
   "packages": [
     "npm:pi-mcp-adapter",
     "npm:pi-web-access",
     "npm:@narumitw/pi-usage",
     "npm:pi-token-speed"
-  ]
+  ],
+  "tokenSpeed": {
+    "display": "full"
+  }
 }
