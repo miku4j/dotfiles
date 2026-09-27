@@ -12,6 +12,7 @@
   ],
   "packages": [
     "npm:pi-mcp-adapter",
-    "npm:pi-web-access"
+    "npm:pi-web-access",
+    "npm:@narumitw/pi-usage"
   ]
 }
