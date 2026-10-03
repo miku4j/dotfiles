@@ -1,2 +1,25 @@
 os:
   editPreset: nvim-remote
+
+gui:
+  scrollHeight: 20
+  theme:
+    activeBorderColor: ["#E6C384", bold]
+    inactiveBorderColor: ["#22262D"]
+    searchingActiveBorderColor: ["#E6C384", bold]
+    optionsTextColor: ["#8BA4B0"]
+    selectedLineBgColor: ["#383B42"]
+    inactiveViewSelectedLineBgColor: [bold]
+    cherryPickedCommitFgColor: ["#090E13"]
+    cherryPickedCommitBgColor: ["#8A9A7B"]
+    markedBaseCommitFgColor: ["#090E13"]
+    markedBaseCommitBgColor: ["#8BA4B0"]
+    unstagedChangesColor: ["#C4746E"]
+    defaultFgColor: ["#C5C9C7"]
+
+keybinding:
+  universal:
+    prevItem: k
+    nextItem: j
+    scrollUpMain: [<pgup>, <up>, K, <ctrl+u>]
+    scrollDownMain: [<pgdown>, <down>, J, <ctrl+d>]
