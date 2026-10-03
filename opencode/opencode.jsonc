@@ -1,15 +1,10 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "plugin": ["@dietrichgebert/ponytail"] ,
+  "plugins": [
+    "/usr/lib/node_modules/opencode-codex-usage/opencode2-plugin",
+  ],
   "default_agent": "general",
-  "small_model": "opencode-go/mimo-v2.5",
   "instructions": ["AGENTS.md"],
-  "command": {
-    "f": {
-      "template": "Load Ponytail and Caveman skills",
-      "description": "Load Ponytail and Caveman skills"
-    }
-  },
   "permission": {
     "bash": {
       "git commit*": "ask",
