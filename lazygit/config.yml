@@ -8,7 +8,7 @@ gui:
     inactiveBorderColor: ["#22262D"]
     searchingActiveBorderColor: ["#E6C384", bold]
     optionsTextColor: ["#8BA4B0"]
-    selectedLineBgColor: ["#383B42"]
+    selectedLineBgColor: ["#393B44"]
     inactiveViewSelectedLineBgColor: [bold]
     cherryPickedCommitFgColor: ["#090E13"]
     cherryPickedCommitBgColor: ["#8A9A7B"]
