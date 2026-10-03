@@ -1,21 +1,25 @@
 {
-  "lastChangelogVersion": "0.87.1",
+  "lastChangelogVersion": "0.99.2",
   "theme": "kanso-zen",
-  "defaultProvider": "openrouter",
-  "defaultModel": "openrouter/deepseek/deepseek-v4.1-flash",
+  "defaultProvider": "openai-codex",
+  "defaultModel": "openai-codex/gpt-6-luna",
+  "defaultThinkingLevel": "max",
   "fullscreenExitOutput": "resume-hint",
   "fullscreenScrollbar": "auto",
   "tuiMode": "fullscreen",
-  "hideThinkingBlock": true,
+  "hideThinkingBlock": false,
   "enabledModels": [
-    "openrouter/deepseek/deepseek-v4.1-flash",
+    "openai-codex/gpt-5.6-luna",
+    "openrouter/inclusionai/ling-3.0-flash-vl",
     "openai-codex/gpt-6-luna"
   ],
   "packages": [
     "npm:pi-mcp-adapter",
     "npm:pi-web-access",
     "npm:@narumitw/pi-usage",
-    "npm:pi-token-speed"
+    "npm:pi-token-speed",
+    "npm:@narumitw/pi-plan-mode",
+    "npm:@pi-archimedes/session-name"
   ],
   "tokenSpeed": {
     "display": "full"
