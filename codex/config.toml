@@ -1,0 +1,18 @@
+service_tier = "fast"
+[tui]
+screen_reader_detection_done = true
+status_line = ["model-with-reasoning", "current-dir", "thread-name", "context-used", "weekly-limit", "fast-mode"]
+status_line_use_colors = true
+
+[tui.model_availability_nux]
+"gpt-6.1-sol" = 4
+
+[projects."/home/miku4j/repo/dotfiles"]
+trust_level = "trusted"
+
+[projects."/home/miku4j/repo/scolarsia-memoloom/repo/research-memoloom-monorepo"]
+trust_level = "trusted"
+
+[mcp_servers.chrome-devtools]
+command = "npx"
+args = ["-y", "chrome-devtools-mcp@latest", "--executablePath=/usr/sbin/chromium"]

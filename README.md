@@ -34,6 +34,9 @@ mkdir .config
 ln -s $(pwd)/repo/dotfiles/.tmux.conf $(pwd)/.tmux.conf
 ln -s ~/repo/dotfiles/yazi ~/.config/yazi
 ln -s ~/repo/dotfiles/opencode ~/.config/opencode
+mkdir -p ~/.codex
+ln -s ~/repo/dotfiles/codex/config.toml ~/.codex/config.toml
+ln -s ~/repo/dotfiles/codex/AGENTS.md ~/.codex/AGENTS.md
 mkdir -p ~/.config/wezterm && ln -s ~/repo/dotfiles/wezterm/wezterm.lua ~/.config/wezterm/wezterm.lua
 mkdir -p ~/.pi/agent
 ln -s ~/repo/dotfiles/pi/settings.json ~/.pi/agent/settings.json
