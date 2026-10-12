@@ -4,6 +4,7 @@ alias lla="ls -la"
 alias t="tmux"
 alias v="lazygit"
 alias n="nvim"
+alias compress-video='bash ~/repo/dotfiles/utils/compress-video.sh'
 
 export VISUAL=nvim
 export EDITOR="$VISUAL"
