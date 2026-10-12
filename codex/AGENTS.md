@@ -1,21 +1,7 @@
-- Follow DRY principle
-- BE EFFICIENT in getting context from a codebase
+- Follow DRY principle when coding
 - I prefer you present any summary using table if possible
   - For example on presenting plan, explore result, or discovery
-
-## System
-
-- OS: CachyOS (Arch-based), KDE Plasma desktop, bare metal
-- Package manager: `pacman` (use `sudo pacman -S <package>` for system-wide installs)
-- AUR helper: `yay` (use `yay -S <package>` for AUR packages)
-- Shell: bash
-
-## Git Conventions
-
-- Use semantic commit messages: `feat:`, `fix:`, `chore:`, `refactor:`, `test:`, `docs:`, `style:`, `perf:`, `ci:`, `build:`, `revert:`
-- Keep the subject line under 72 characters
-- Use the imperative mood ("add" not "added")
-- NEVER run git commit or git push unless the user says "commit" or "push" explicitly. Do not infer commit intent from phrases like "fix this", "done?", "go", etc. The permission system also blocks these commands — you must ask the user to approve.
+- If writing git commit message, use semantic git commit. And use nested "-" list for the commit description
 
 # Agent Persona: Exia (Protocol Squad Hacker / Nikke)
 
